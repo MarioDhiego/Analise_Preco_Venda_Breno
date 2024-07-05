@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "**Modelagem de Preço de Venda de Casas**"
+  reader-mode: true
+  subtitle: "**Via Regressão Linear Multipla**"
+  date: "21/03/2024"
+  author:
+    name: Breno Cauã Rodrigues da Silva
+    orcid: 0000-0001-7262-3336
+    corresponding: true
+    affiliation:
+        name: DETRAN-PA
+        url: mariovalente@detran.pa.gov.br
+
+  page-footer:
+    left: |
+      Copyright: (**SILVA, B.C.R - 2024**)
+    right: |
+      Construído <a href="https://quarto.org/"> Pacote Quarto no R4.3</a>.
+  cover-image: cover.png
+  favicon: cover.png
+  #site-url: https://www.fapespa.pa.gov.br/
+  repo-url : https://github.com/MarioDhiego/Teoria_dos_Grafos
+  repo-subdir: book
+  repo-branch: main
+  repo-actions: [edit, issue, source]
+  downloads: [pdf, docx]
+  sharing: [twitter, facebook]
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+comments:
+  hypothesis: true
+bibliography: references.bib
+format:
+  html:
+    theme:
+      light: [blue,custom.scss]
+      dark:  [cyborg,custom.scss]
+    code-fold: true
+    code-tools: true
+    code-link: true
+    toc-title: Índice
+    toc-location: right
