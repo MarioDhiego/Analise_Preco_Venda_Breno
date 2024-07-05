@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Modelagem de Preço de Venda de Casas - 1&nbsp; Introdução</title>
+<title>Modelagem de Preço de Venda de Casas - 2&nbsp; Material e Métodos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,7 +95,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <meta name="quarto:offset" content="./">
 <link href="./summary.html" rel="next">
 <link href="./index.html" rel="prev">
-<link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,6 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -137,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Material e Métodos</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -201,17 +201,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefácio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Material e Métodos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Resultados</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resultados</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,12 +228,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#materiais-e-métodos" id="toc-materiais-e-métodos" class="nav-link active" data-scroll-target="#materiais-e-métodos"><span class="toc-section-number">2</span>  Materiais e Métodos</a>
+  <li><a href="#conjunto-de-dados" id="toc-conjunto-de-dados" class="nav-link active" data-scroll-target="#conjunto-de-dados"><span class="toc-section-number">2.1</span>  Conjunto de Dados</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="toc-section-number">2.2</span>  Software</a></li>
+  <li><a href="#metodologia" id="toc-metodologia" class="nav-link" data-scroll-target="#metodologia"><span class="toc-section-number">2.3</span>  Metodologia</a></li>
+  <li><a href="#conceitos-e-definições" id="toc-conceitos-e-definições" class="nav-link" data-scroll-target="#conceitos-e-definições"><span class="toc-section-number">2.4</span>  Conceitos e Definições</a>
   <ul class="collapse">
-  <li><a href="#conjunto-de-dados" id="toc-conjunto-de-dados" class="nav-link" data-scroll-target="#conjunto-de-dados"><span class="toc-section-number">2.1</span>  Conjunto de Dados</a></li>
-  <li><a href="#softaware" id="toc-softaware" class="nav-link" data-scroll-target="#softaware"><span class="toc-section-number">2.2</span>  Softaware</a></li>
+  <li><a href="#transformação-box-cox" id="toc-transformação-box-cox" class="nav-link" data-scroll-target="#transformação-box-cox"><span class="toc-section-number">2.4.1</span>  Transformação Box-Cox</a></li>
+  <li><a href="#modelo-de-regressão-múltipla" id="toc-modelo-de-regressão-múltipla" class="nav-link" data-scroll-target="#modelo-de-regressão-múltipla"><span class="toc-section-number">2.4.2</span>  Modelo de Regressão Múltipla</a></li>
+  <li><a href="#diagnóstico" id="toc-diagnóstico" class="nav-link" data-scroll-target="#diagnóstico"><span class="toc-section-number">2.4.3</span>  Diagnóstico</a></li>
   </ul></li>
-  <li><a href="#conceitos-e-definições" id="toc-conceitos-e-definições" class="nav-link" data-scroll-target="#conceitos-e-definições"><span class="toc-section-number">3</span>  Conceitos e Definições</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/MarioDhiego/Teoria_dos_Grafos/edit/main/book/intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/MarioDhiego/Teoria_dos_Grafos/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/MarioDhiego/Teoria_dos_Grafos/blob/main/book/intro.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -242,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Material e Métodos</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -257,21 +260,212 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="materiais-e-métodos" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Materiais e Métodos</h1>
+<style>
+  body{text-align: justify}
+</style>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
 <section id="conjunto-de-dados" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="conjunto-de-dados"><span class="header-section-number">2.1</span> Conjunto de Dados</h2>
+<p>Como já dito, o conjunto de dados utilizado neste estudo foi obtido do . Este conjunto contém informações sobre vendas de casas no Condado de King, Seattle, entre maio de 2014 e maio de 2015, totalizando 21.613 observações e 21 variáveis. Porém, foi retirada uma amostra de tal conjunto. Visto que o princípio da Inferência Estatística é generalizar, concluir ou inferir os resultados de um conjunto pequeno para um conjunto maior, se tornado mais adequado para esse caso, visando um menor custo.</p>
+<p>Foi retirada uma amostra aleatória simples, que de forma simples e operante, parte de uma lista com <span class="math inline">\(N\)</span> unidades elementares, realiza-se um sorteio, com probabilidades iguais, de <span class="math inline">\(n\)</span> unidades . Utilizando uma fórmula mais simples para se calcular o tamanho da amostra, <span class="math display">\[n = \dfrac{N \times n_0}{N + n_0},\]</span> onde <span class="math inline">\(n_0 = \frac{1}{\varepsilon^2}\)</span>, sendo <span class="math inline">\(\varepsilon\)</span> a margem de erro amostral admitido. Fixando um <span class="math inline">\(\varepsilon = 0,03\)</span>, isto é, admitindo um erro amostral de 3%, <span class="math inline">\(n = 1.057\)</span>. No Quadro (<span class="math inline">\(\ref{quadro:01}\)</span>), são apresentadas as variáveis preditoras e suas descrições.</p>
+<p>Sendo a variável resposta, as demais variáveis fornecem uma visão abrangente das características das casas e são fundamentais para o desenvolvimento e análise dos modelos preditivos.</p>
+<p>Foi realizada uma manipulação no conjunto de dados para torná-lo mais adequado à aplicação de regressão linear múltipla. Da variável preditora , foram extraídas informações adicionais e criadas quatro novas variáveis, conforme descrito no Quadro (<span class="math inline">\(\ref{quadro:02}\)</span>).</p>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
 </section>
-<section id="softaware" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="softaware"><span class="header-section-number">2.2</span> Softaware</h2>
+<section id="software" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="software"><span class="header-section-number">2.2</span> Software</h2>
+<p>Para conduzir as análises e estimativas neste estudo, foi utilizada a linguagem de programação <strong>Python</strong>, empregando a IDE Google Colaboratory*. As seguintes bibliotecas foram utilizadas nas diversas etapas do processo:</p>
+<ul>
+<li><strong>NumPy</strong>: Para operações matemáticas, lógicas e estatísticas eficientes em vetores multidimensionais ou matrizes.</li>
+<li><strong>Pandas</strong>: Para manipulação e análise de dados, oferecendo estruturas de dados flexíveis e poderosas.</li>
+<li><strong>Matplotlib</strong>: Para criação de visualizações gráficas.</li>
+<li><strong>Seaborn</strong>: Complementar ao Matplotlib, oferece uma interface de alto nível para criação de gráficos estatísticos atrativos e informativos.</li>
+<li><strong>Scipy</strong>: Para cálculos científicos e técnicos.</li>
+<li><strong>Statsmodels</strong>: Para estimar e inferir modelos estatísticos</li>
+</ul>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
+</section>
+<section id="metodologia" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="metodologia"><span class="header-section-number">2.3</span> Metodologia</h2>
+<p>O processo de análise e modelagem dos dados para prever o preço das casas, deu-se de forma:</p>
+<ol type="1">
+<li><strong>Testes de Normalidade e Transformações</strong>: Um dos pressupostos para aplicação de regressão linear é de que a variável resposta, <span class="math inline">\(Y\)</span>, siga uma distribuição normal. Os testes de normalidade que foram aplicados nesse trabalho foram: <em>Shapiro-Wilk</em>, <em>Kolmogorov-Smirnov</em>, <em>D’Agostino-Pearson</em> e <em>Jarque-Bera</em>.</li>
+</ol>
+<p>Caso a variável resposta <span class="math inline">\(Y\)</span> não siga uma distribuição gaussiana, será aplicado a Transformação Box-Cox.</p>
+<ol start="2" type="1">
+<li><strong>Análise Exploratória de Dados (AED)</strong>: Realização de análises estatísticas por meio de medidas de resumo e visualizações gráficas para entender a distribuição e variabilidade dos dados, identificar padrões e relações nos dados.
+<ul>
+<li><strong>Medidas Descritivas</strong>: são fundamentais para uma análise exploratória de dados (AED) robusta e informativa. Elas oferecem um resumo estatístico dos dados, possibilitando uma compreensão rápida das principais características das variáveis preditoras e da variável resposta. Incluem média, desvio padrão, valores mínimos, máximos e quartis (25%, mediana e 75%).</li>
+<li><strong>Análise Gráfica</strong>: crucial na AED para visualizar intuitivamente a distribuição dos dados e as relações entre variáveis. Foram utilizados os tipos de gráficos abaixo, com objetivos específicos:
+<ul>
+<li><strong>Histogramas</strong>: Visualizam a distribuição das variáveis numéricas, destacando a frequência dos valores e padrões como assimetrias e outliers através de curvas de densidade (KDE).</li>
+<li><strong>Boxplots</strong>: Mostram a dispersão, assimetria e outliers das variáveis, sendo úteis para comparações entre grupos.</li>
+<li><strong>Diagramas de Dispersão</strong>: Exploram relações entre variáveis numéricas, identificando padrões e correlações.</li>
+<li><strong>Matriz de Correlação</strong>: Mostra relações lineares entre todas as variáveis numéricas, ajudando na detecção de multicolinearidade e na seleção de variáveis para modelos de regressão.</li>
+</ul></li>
+</ul></li>
+<li><strong>Modelagem Estatística:</strong> Ajuste de modelos de regressão linear múltipla para prever o preço das casas.</li>
+<li><strong>Diagnóstico e Análise de Resíduos:</strong> Avaliação dos modelos por meio de análise de resíduos, medidas para pontos aberrantes e influentes como alavancagem, Distância de Cook e <em>DFFITS</em>. Verificação de pressupostos de normalidade e homocedasticidade.</li>
+</ol>
+<p>Para todos os Teste de Hipóteses e Intervalos de Confiança foi fixado um nível de significância de 3%, assim, <span class="math inline">\(\alpha = 0,03\)</span>.</p>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
+</section>
+<section id="conceitos-e-definições" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="conceitos-e-definições"><span class="header-section-number">2.4</span> Conceitos e Definições</h2>
+<section id="transformação-box-cox" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="transformação-box-cox"><span class="header-section-number">2.4.1</span> Transformação Box-Cox</h3>
+<p>Sugerida em 1964 por George E. P. Box e David R. Cox, que propuseram a família de transformações de potência (não-lineares) expressa pela Equação (<span class="math inline">\(\ref{equation:02}\)</span>).</p>
+<p><span class="math display">\[
+\begin{equation}
+y^{(\lambda)} = \left\{ \begin{array}{l}
+\dfrac{y^\lambda - 1}{\lambda} \text{, se } \lambda \neq 0 \text{, } y &gt; 0 \\
+\log  y \text{, se } \lambda = 0 \text{, } y &gt; 0
+\end{array} \right.
+\label{equation:02}
+\end{equation}
+\]</span></p>
+<p>O valor do parâmetro <span class="math inline">\(\lambda\)</span>, pode ser estimado pelo método de <em>Máxima Verossimilhança</em>. O princípio da verossimilhança afirma que devemos escolher o valor do parâmetro desconhecido, com base em uma amostra aleatória, que maximize a probabilidade desta amostra aleatória em questão ser obtida, ou seja, o valor que torna tal amostra a “mais provável” .</p>
+<p>Assumindo que, as observações transformadas <span class="math inline">\(y_i^\lambda\)</span>, <span class="math inline">\(i = 1, ..., n\)</span>, satisfazem as suposições de uma distribuição gaussiana, ou seja, são <em>i.i.d</em> de forma normal com variância constante, <span class="math inline">\(\sigma^2\)</span>, e esperança dada por, <span class="math inline">\(E[Y_i^{(\lambda)}] = \boldsymbol{\beta}\mathbf{X_i}\)</span>. Assim, para um <span class="math inline">\(\lambda\)</span> fixo, a função é, com exceção de constantes, dada na Equação (<span class="math inline">\(\ref{equation:03}\)</span>).</p>
+<p><span class="math display">\[
+\begin{equation}
+\boldsymbol{l}(\lambda) = - \dfrac{n}{2} \log \hat{\sigma^2}(\lambda) + (\lambda - 1) \sum_{i=1}^n \log y_i
+\label{equation:03}
+\end{equation}
+\]</span></p>
+<p>Onde <span class="math inline">\(\hat{\sigma^2}(\lambda)\)</span> é obtido a partir da de <span class="math inline">\(Y^{(\lambda)}\)</span>, sendo a soma de quadrados dos resíduos (<span class="math inline">\(SQR\)</span>) divido pelos graus de liberdade (<span class="math inline">\(gl\)</span>) do resíduo. Falaremos mais sobre isso à frente.</p>
+<p>Em resumo, um <span class="math inline">\(\lambda\)</span> que maximize <span class="math inline">\(\boldsymbol{l}(\lambda)\)</span> é a melhor estimativa para o parâmetro da transformação. Para mais informações, se indica ver o brilhante trabalho de Box e Cox (1964) , e um estudo sobre as Transformações de Box-Cox, elaborado em uma Monografia do Departamento de Estatística da Universidade de Brasília .</p>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
+</section>
+<section id="modelo-de-regressão-múltipla" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="modelo-de-regressão-múltipla"><span class="header-section-number">2.4.2</span> Modelo de Regressão Múltipla</h3>
+<p>Seja <span class="math inline">\(Y\)</span> a variável dependente (resposta) que desejamos estimar usando <span class="math inline">\(p - 1\)</span> variáveis independentes (preditoras). Assim, cada observação <span class="math inline">\(Y_i\)</span> é expressa como uma combinação linear das variáveis independentes <span class="math inline">\(X_{ij}\)</span> acrescida de um termo estocástico <span class="math inline">\(\varepsilon_i\)</span>, onde <span class="math inline">\(j = 1, 2, \ldots, p - 1\)</span>, sendo <span class="math inline">\(p\)</span> o número total de coeficientes de regressão, e <span class="math inline">\(i = 1, 2, \ldots, n\)</span>, onde <span class="math inline">\(n\)</span> é o tamanho da amostra. Veja a Equação (<span class="math inline">\(\ref{equation:04}\)</span>).</p>
+<p><span class="math display">\[
+\begin{equation}
+Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_{p - 1} X_{ip - 1} + \varepsilon_i
+\label{equation:04}
+\end{equation}
+\]</span></p>
+<p>A Equação (<span class="math inline">\(\ref{equation:04}\)</span>) pode ser expressa de forma matricial, como mostrado na Equação (<span class="math inline">\(\ref{equation:05}\)</span>).</p>
+<p><span class="math display">\[
+\begin{equation}
+\mathbf{Y} = \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\varepsilon}
+\label{equation:05}
+\end{equation}
+\]</span></p>
+<p>Onde</p>
+<p>$$</p>
+<p><span class="math display">\[\begin{eqnarray}
+\mathbf{Y_{n \times 1}} = \begin{bmatrix}
+Y_1 \\ Y_2 \\ \vdots \\ Y_n
+\end{bmatrix},
+\mathbf{X_{n \times p}} = \begin{bmatrix}
+1 &amp; X_{11} &amp; \cdots &amp; X_{1 \text{ } p - 1} \\
+1 &amp; X_{21} &amp; \cdots &amp; X_{2 \text{ } p - 1} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; X_{n1} &amp; \cdots &amp; X_{n \text{ } p - 1}
+\end{bmatrix},
+\boldsymbol{\beta_\mathbf{p \times 1}} = \begin{bmatrix}
+\beta_0 \\ \beta_1 \\ \vdots \\ \beta_{p - 1}
+\end{bmatrix},
+\boldsymbol{\varepsilon_\mathbf{n \times 1}} = \begin{bmatrix}
+\varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n
+\end{bmatrix}.
+\end{eqnarray}\]</span> $$</p>
+<p><span class="math inline">\(\mathbf{Y}\)</span> é o vetor de valores da variável resposta, <span class="math inline">\(\mathbf{X}\)</span> é a matriz de variáveis preditoras, <span class="math inline">\(\boldsymbol{\beta}\)</span> vetor de coeficientes da regressão e <span class="math inline">\(\boldsymbol{\varepsilon}\)</span> é componente estocástica. A regressão pelo método de mínimos quadrados tem como principio, estimar os coeficientes do modelo minimizando a soma dos quadrados dos resíduos, desta forma <span class="math display">\[{\boldsymbol{\hat\beta}} = \mathbf{( X^T X )^{-1} X^T Y}.\]</span> Quando os pressupostos da regressão pelo método de mínimos quadrados são atendidos, os coeficientes estimados são não viesados e possuem variância mínima dentre a classe de estimadores não viesados para <span class="math inline">\(\boldsymbol{\beta}\)</span> .</p>
+<section id="variância-em-um-modelo-de-regressão-múltipla" class="level4" data-number="2.4.2.1">
+<h4 data-number="2.4.2.1" class="anchored" data-anchor-id="variância-em-um-modelo-de-regressão-múltipla"><span class="header-section-number">2.4.2.1</span> Variância em um Modelo de Regressão Múltipla</h4>
+<p>Na análise de regressão múltipla, a variância dos erros (<span class="math inline">\(\sigma^2\)</span>) é um parâmetro fundamental para compreender a dispersão dos valores da variável dependente <span class="math inline">\(Y\)</span> em relação ao modelo ajustado, que incorpora múltiplas variáveis independentes. A estimativa dessa variância é essencial para realizar inferências estatísticas, como a construção de intervalos de confiança e a realização de testes de hipóteses.</p>
+<p>Já foi mostrado nesse trabalho que em um modelo de regressão múltipla, cada observação <span class="math inline">\(Y_i\)</span> é expressa como uma combinação linear de variáveis independentes <span class="math inline">\(X_{ij}\)</span> somada de um termo estocástico <span class="math inline">\(\varepsilon_i\)</span>, onde <span class="math inline">\(j = 1, 2, \ldots, p - 1\)</span> e <span class="math inline">\(i = 1, 2, \ldots, n\)</span>, expressa pela Equação (<span class="math inline">\(\ref{equation:04}\)</span>).</p>
+<p>Os erros ou resíduos <span class="math inline">\(\varepsilon_i\)</span> são as diferenças entre os valores observados <span class="math inline">\(Y_i\)</span> e os valores preditos <span class="math inline">\(\hat{Y}_i\)</span> pelo modelo ajustado, logo,</p>
+<p><span class="math display">\[
+\varepsilon_i = Y_i - \hat{Y}_i.
+\]</span></p>
+<p>Em regressão múltipla, o número de graus de liberdade dos resíduos é <span class="math inline">\(n - p\)</span>, onde <span class="math inline">\(p\)</span> é o número de parâmetros a serem estimados e <span class="math inline">\(n\)</span> é o tamanho da amostra. Assim, a soma dos quadrados dos resíduos é dividida pelos graus de liberdade para obter o quadrado médio do erro (QME), desta forma</p>
+<p><span class="math display">\[
+QME = \frac{SQE}{n - p},
+\]</span></p>
+<p>sendo o QME um estimador não tendencioso para a variância dos erros, sendo está igual a variância populacional de <span class="math inline">\(Y\)</span>, logo, <span class="math inline">\(E[QME] = \sigma^2\)</span>. Essa estimativa é crucial para diversas análises no contexto de regressão múltipla. Um menor <span class="math inline">\(\hat{\sigma^2}\)</span> indica que os valores de <span class="math inline">\(Y\)</span> estão mais próximos dos valores preditos pelo modelo, sugerindo um melhor ajuste. Por outro lado, um maior <span class="math inline">\(\hat{\sigma^2}\)</span> indica maior dispersão dos dados em torno da superfície de regressão, sugerindo que o modelo pode não capturar adequadamente a relação entre <span class="math inline">\(Y\)</span> e as variáveis independentes <span class="math inline">\(X_j\)</span>.</p>
+<p>Além disso, a estimativa de <span class="math inline">\(\sigma^2\)</span>, ou seja, <span class="math inline">\(\hat{\sigma^2}\)</span>, é usada para calcular o erro padrão dos coeficientes de regressão, permitindo testar a significância desses coeficientes e construir intervalos de confiança. Também é essencial na análise de resíduos, proporcionando uma avaliação robusta do modelo. Para uma melhor compreensão de tal assunto, deixa-se as referências .</p>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
 </section>
 </section>
-<section id="conceitos-e-definições" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Conceitos e Definições</h1>
+<section id="diagnóstico" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="diagnóstico"><span class="header-section-number">2.4.3</span> Diagnóstico</h3>
+<section id="pontos-de-alavanca" class="level4" data-number="2.4.3.1">
+<h4 data-number="2.4.3.1" class="anchored" data-anchor-id="pontos-de-alavanca"><span class="header-section-number">2.4.3.1</span> Pontos de Alavanca</h4>
+<p>A matriz de projeção H,</p>
+<p><span class="math display">\[
+H = \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T,
+\]</span></p>
+<p>é utilizada para identificar observações atípicas e influentes na amostra. É importante focar na diagonal principal dessa matriz, onde valores elevados de <span class="math inline">\(h_{ii}\)</span> indicam observações que se destacam consideravelmente das demais, em relação ao vetor médio das variáveis preditoras.</p>
+<p>Para iniciar o diagnóstico, é crucial examinar os <em>pontos de alavancagem</em>, que são observações com <span class="math inline">\(h_{ii}\)</span> superior ao limiar <span class="math inline">\(\frac{2p}{n}\)</span>, portanto:</p>
+<p><span class="math display">\[
+h_{ii} \geq \frac{2p}{n},
+\]</span></p>
+<p>onde <span class="math inline">\(p\)</span> é o número de parâmetros (coeficientes) da regressão e <span class="math inline">\(n\)</span> é o tamanho da amostra. Esse método tende a detectar muitos pontos de alavancagem, o que justifica a utilização de técnicas adicionais de diagnóstico .</p>
+</section>
+<section id="pontos-de-influência" class="level4" data-number="2.4.3.2">
+<h4 data-number="2.4.3.2" class="anchored" data-anchor-id="pontos-de-influência"><span class="header-section-number">2.4.3.2</span> Pontos de Influência</h4>
+<p>Define-se como <em>ponto de influência</em> a observação que, ao ser removida do conjunto de dados, causa mudanças significativas no vetor de coeficientes da regressão. As medidas para verificação de pontos de influência incluem:</p>
+<ol type="1">
+<li><em>Distância de Cook</em>: Avalia o quão atípica é uma observação, combinando o resíduo padronizado com os pontos de alavanca, conforme a Equação (<span class="math inline">\(\ref{equation:13}\)</span>).</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+D_i = \dfrac{h_{ii}}{p(1 - h_{ii})} (\varepsilon_i^*)^2
+\label{equation:13}
+\end{equation}
+\]</span></p>
+<p>A Distância de Cook pode não ser adequada quando o resíduo padronizado é grande e <span class="math inline">\(h_{ii}\)</span> é próximo de zero. Compara-se <span class="math inline">\(D_i\)</span> com o valor crítico da distribuição <span class="math inline">\(F-Snedecor\)</span> com <span class="math inline">\(p\)</span> e <span class="math inline">\(n - p\)</span> graus de liberdade, ao nível de significância <span class="math inline">\(\alpha = 50\%\)</span>, valor aproximadamente igual a 1 na prática. Assim, se <span class="math inline">\(D_i \geq 1\)</span>, a <em>i-ésima</em> observação é considerada um ponto influente.</p>
+<ol start="2" type="1">
+<li><em>DFFITS</em>: Uma medida alternativa à Distância de Cook, obtida a partir do resíduo studentizado e da medida de alavancagem, conforme a Equação (<span class="math inline">\(\ref{equation:14}\)</span>).</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+DFFITS_i = t_i \sqrt{ \dfrac{h_{ii}}{p(1 - h_{ii})} }
+\label{equation:14}
+\end{equation}
+\]</span></p>
+<p>Se <span class="math inline">\(DFFITS_i \geq 2 \sqrt{ \dfrac{p}{n - p} }\)</span>, a <em>i-ésima</em> observação é considerada um ponto influente.</p>
+</section>
+<section id="análise-de-resíduos" class="level4" data-number="2.4.3.3">
+<h4 data-number="2.4.3.3" class="anchored" data-anchor-id="análise-de-resíduos"><span class="header-section-number">2.4.3.3</span> Análise de Resíduos</h4>
+<p>A análise de resíduos é essencial para diagnosticar a adequação do modelo de regressão linear à variável resposta <span class="math inline">\(Y\)</span>, assumindo que <span class="math inline">\(\varepsilon_i \sim \mathcal{N}(0, \sigma^2)\)</span>.</p>
+<div class="progress">
+<div class="progress-bar" style="width: 100%;">
+
+</div>
+</div>
 
 
 <!-- -->
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -577,25 +771,256 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefácio</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Resultados</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resultados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introdução</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Materiais e Métodos</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conjunto de Dados</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Softaware</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conceitos e Definições</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">  body{text-align: justify}</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># Material e Métodos</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conjunto de Dados</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Como já dito, o conjunto de dados utilizado neste estudo foi obtido do \href{https://www.kaggle.com}{\textbf{Kaggle}}. Este conjunto contém informações sobre vendas de casas no Condado de King, Seattle, entre maio de 2014 e maio de 2015, totalizando 21.613 observações e 21 variáveis. Porém, foi retirada uma amostra de tal conjunto. Visto que o princípio da Inferência Estatística é generalizar, concluir ou inferir os resultados de um conjunto pequeno para um conjunto maior, se tornado mais adequado para esse caso, visando um menor custo.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Foi retirada uma amostra aleatória simples, que de forma simples e operante, parte de uma lista com $N$ unidades elementares, realiza-se um sorteio, com probabilidades iguais, de $n$ unidades \cite{Bussab&amp;Bolfarine}. Utilizando uma fórmula mais simples para se calcular o tamanho da amostra, $$n = \dfrac{N \times n_0}{N + n_0},$$ onde $n_0 = \frac{1}{\varepsilon^2}$, sendo $\varepsilon$ a margem de erro amostral admitido. Fixando um $\varepsilon = 0,03$, isto é, admitindo um erro amostral de 3%, $n = 1.057$. No Quadro (\ref{quadro:01}), são apresentadas as variáveis preditoras e suas descrições.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Sendo \textit{'price'} a variável resposta, as demais variáveis fornecem uma visão abrangente das características das casas e são fundamentais para o desenvolvimento e análise dos modelos preditivos.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Foi realizada uma manipulação no conjunto de dados para torná-lo mais adequado à aplicação de regressão linear múltipla. Da variável preditora \textit{'date'}, foram extraídas informações adicionais e criadas quatro novas variáveis, conforme descrito no Quadro (\ref{quadro:02}).</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Para conduzir as análises e estimativas neste estudo, foi utilizada a linguagem de programação **Python**, empregando a IDE \href{https://colab.research.google.com/} *Google Colaboratory*. As seguintes bibliotecas foram utilizadas nas diversas etapas do processo:</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**NumPy**: Para operações matemáticas, lógicas e estatísticas eficientes em vetores multidimensionais ou matrizes.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Pandas**: Para manipulação e análise de dados, oferecendo estruturas de dados flexíveis e poderosas.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Matplotlib**: Para criação de visualizações gráficas.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Seaborn**: Complementar ao Matplotlib, oferece uma interface de alto nível para criação de gráficos estatísticos atrativos e informativos.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Scipy**: Para cálculos científicos e técnicos.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Statsmodels**: Para estimar e inferir modelos estatísticos</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metodologia</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>O processo de análise e modelagem dos dados para prever o preço das casas, deu-se de forma:</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Testes de Normalidade e Transformações**: Um dos pressupostos para aplicação de regressão linear é de que a variável resposta, $Y$, siga uma distribuição normal. Os testes de normalidade que foram aplicados nesse trabalho foram: *Shapiro-Wilk*, *Kolmogorov-Smirnov*, *D'Agostino-Pearson* e *Jarque-Bera*.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Caso a variável resposta $Y$ não siga uma distribuição gaussiana, será aplicado a Transformação Box-Cox.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Análise Exploratória de Dados (AED)**: Realização de análises estatísticas por meio de medidas de resumo e visualizações gráficas para entender a distribuição e variabilidade dos dados, identificar padrões e relações nos dados.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Medidas Descritivas**: são fundamentais para uma análise exploratória de dados (AED) robusta e informativa. Elas oferecem um resumo estatístico dos dados, possibilitando uma compreensão rápida das principais características das variáveis preditoras e da variável resposta. Incluem média, desvio padrão, valores mínimos, máximos e quartis (25%, mediana e 75%).</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>**Análise Gráfica**: crucial na AED para visualizar intuitivamente a distribuição dos dados e as relações entre variáveis. Foram utilizados os tipos de gráficos abaixo, com objetivos específicos:</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>**Histogramas**: Visualizam a distribuição das variáveis numéricas, destacando a frequência dos valores e padrões como assimetrias e outliers através de curvas de densidade (KDE).</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>**Boxplots**: Mostram a dispersão, assimetria e outliers das variáveis, sendo úteis para comparações entre grupos.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>**Diagramas de Dispersão**: Exploram relações entre variáveis numéricas, identificando padrões e correlações.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>**Matriz de Correlação**: Mostra relações lineares entre todas as variáveis numéricas, ajudando na detecção de multicolinearidade e na seleção de variáveis para modelos de regressão.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Modelagem Estatística:** Ajuste de modelos de regressão linear múltipla para prever o preço das casas.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Diagnóstico e Análise de Resíduos:** Avaliação dos modelos por meio de análise de resíduos, medidas para pontos aberrantes e influentes como alavancagem, Distância de Cook e *DFFITS*. Verificação de pressupostos de normalidade e homocedasticidade.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Para todos os Teste de Hipóteses e Intervalos de Confiança foi fixado um nível de significância de 3%, assim, $\alpha = 0,03$.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conceitos e Definições</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Transformação Box-Cox</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Sugerida em 1964 por George E. P. Box e David R. Cox, que propuseram a família de transformações de potência (não-lineares) expressa pela Equação (\ref{equation:02}).</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>y^{(\lambda)} = \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>\dfrac{y^\lambda - 1}{\lambda} \text{, se } \lambda \neq 0 \text{, } y &gt; 0 <span class="sc">\\</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>\log  y \text{, se } \lambda = 0 \text{, } y &gt; 0</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>\end{array} \right.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>\label{equation:02}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>O valor do parâmetro $\lambda$, pode ser estimado pelo método de *Máxima Verossimilhança*. O princípio da verossimilhança afirma que devemos escolher o valor do parâmetro desconhecido, com base em uma amostra aleatória, que maximize a probabilidade desta amostra aleatória em questão ser obtida, ou seja, o valor que torna tal amostra a “mais provável” \cite{MorretinBussab}.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Assumindo que, as observações transformadas $y_i^\lambda$, $i = 1, ..., n$, satisfazem as suposições de uma distribuição gaussiana, ou seja, são *i.i.d* de forma normal com variância constante, $\sigma^2$, e esperança dada por, $E<span class="co">[</span><span class="ot">Y_i^{(\lambda)}</span><span class="co">]</span> = \boldsymbol{\beta}\mathbf{X_i}$. Assim, para um $\lambda$ fixo, a função \textit{log-verossimilhança} é, com exceção de constantes, dada na Equação (\ref{equation:03}).</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>\boldsymbol{l}(\lambda) = - \dfrac{n}{2} \log \hat{\sigma^2}(\lambda) + (\lambda - 1) \sum_{i=1}^n \log y_i </span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>\label{equation:03}</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Onde $\hat{\sigma^2}(\lambda)$ é obtido a partir da \textit{Análise de Variância} de $Y^{(\lambda)}$, sendo a soma de quadrados dos resíduos ($SQR$) divido pelos graus de liberdade ($gl$) do resíduo. Falaremos mais sobre isso à frente.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>Em resumo, um $\lambda$ que maximize $\boldsymbol{l}(\lambda)$ é a melhor estimativa para o parâmetro da transformação. Para mais informações, se indica ver o brilhante trabalho de Box e Cox (1964) \cite{BoxCox}, e um estudo sobre as Transformações de Box-Cox, elaborado em uma Monografia do Departamento de Estatística da Universidade de Brasília \cite{alvarez2015estudo}.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### Modelo de Regressão Múltipla</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Seja $Y$ a variável dependente (resposta) que desejamos estimar usando $p - 1$ variáveis independentes (preditoras). Assim, cada observação $Y_i$ é expressa como uma combinação linear das variáveis independentes $X_{ij}$ acrescida de um termo estocástico $\varepsilon_i$, onde $j = 1, 2, \ldots, p - 1$, sendo $p$ o número total de coeficientes de regressão, e $i = 1, 2, \ldots, n$, onde $n$ é o tamanho da amostra. Veja a Equação (\ref{equation:04}).</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_{p - 1} X_{ip - 1} + \varepsilon_i</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>\label{equation:04}</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>A Equação (\ref{equation:04}) pode ser expressa de forma matricial, como mostrado na Equação (\ref{equation:05}).</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>\mathbf{Y} = \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\varepsilon}</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>\label{equation:05}</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>Onde</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>\begin{eqnarray}</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>\mathbf{Y_{n \times 1}} = \begin{bmatrix}</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>Y_1 <span class="sc">\\</span> Y_2 <span class="sc">\\</span> \vdots <span class="sc">\\</span> Y_n</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>\end{bmatrix},</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>\mathbf{X_{n \times p}} = \begin{bmatrix}</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>1 &amp; X_{11} &amp; \cdots &amp; X_{1 \text{ } p - 1} <span class="sc">\\</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>1 &amp; X_{21} &amp; \cdots &amp; X_{2 \text{ } p - 1} <span class="sc">\\</span> </span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>\vdots &amp; \vdots &amp; \ddots &amp; \vdots <span class="sc">\\</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>1 &amp; X_{n1} &amp; \cdots &amp; X_{n \text{ } p - 1}</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>\end{bmatrix},</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>\boldsymbol{\beta_\mathbf{p \times 1}} = \begin{bmatrix}</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>\beta_0 <span class="sc">\\</span> \beta_1 <span class="sc">\\</span> \vdots <span class="sc">\\</span> \beta_{p - 1}</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>\end{bmatrix},</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>\boldsymbol{\varepsilon_\mathbf{n \times 1}} = \begin{bmatrix}</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>\varepsilon_1 <span class="sc">\\</span> \varepsilon_2 <span class="sc">\\</span> \vdots <span class="sc">\\</span> \varepsilon_n</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>\end{eqnarray}</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>$\mathbf{Y}$ é o vetor de valores da variável resposta, $\mathbf{X}$ é a matriz de variáveis preditoras, $\boldsymbol{\beta}$ vetor de coeficientes da regressão e $\boldsymbol{\varepsilon}$ é componente estocástica. A regressão pelo método de mínimos quadrados tem como principio, estimar os coeficientes do modelo minimizando a soma dos quadrados dos resíduos, desta forma $${\boldsymbol{\hat\beta}} = \mathbf{( X^T X )^{-1} X^T Y}.$$ Quando os pressupostos da regressão pelo método de mínimos quadrados são atendidos, os coeficientes estimados são não viesados e possuem variância mínima dentre a classe de estimadores não viesados para $\boldsymbol{\beta}$ \cite{alvarez2015estudo}.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Variância em um Modelo de Regressão Múltipla</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Na análise de regressão múltipla, a variância dos erros ($\sigma^2$) é um parâmetro fundamental para compreender a dispersão dos valores da variável dependente $Y$ em relação ao modelo ajustado, que incorpora múltiplas variáveis independentes. A estimativa dessa variância é essencial para realizar inferências estatísticas, como a construção de intervalos de confiança e a realização de testes de hipóteses.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>Já foi mostrado nesse trabalho que em um modelo de regressão múltipla, cada observação $Y_i$ é expressa como uma combinação linear de variáveis independentes $X_{ij}$ somada de um termo estocástico $\varepsilon_i$, onde $j = 1, 2, \ldots, p - 1$ e $i = 1, 2, \ldots, n$, expressa pela Equação (\ref{equation:04}).</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Os erros ou resíduos $\varepsilon_i$ são as diferenças entre os valores observados $Y_i$ e os valores preditos $\hat{Y}_i$ pelo modelo ajustado, logo,</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>\varepsilon_i = Y_i - \hat{Y}_i.</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Em regressão múltipla, o número de graus de liberdade dos resíduos é $n - p$, onde $p$ é o número de parâmetros a serem estimados e $n$ é o tamanho da amostra. Assim, a soma dos quadrados dos resíduos é dividida pelos graus de liberdade para obter o quadrado médio do erro (QME), desta forma</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>QME = \frac{SQE}{n - p},</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>sendo o QME um estimador não tendencioso para a variância dos erros, sendo está igual a variância populacional de $Y$, logo, $E<span class="co">[</span><span class="ot">QME</span><span class="co">]</span> = \sigma^2$. Essa estimativa é crucial para diversas análises no contexto de regressão múltipla. Um menor $\hat{\sigma^2}$ indica que os valores de $Y$ estão mais próximos dos valores preditos pelo modelo, sugerindo um melhor ajuste. Por outro lado, um maior $\hat{\sigma^2}$ indica maior dispersão dos dados em torno da superfície de regressão, sugerindo que o modelo pode não capturar adequadamente a relação entre $Y$ e as variáveis independentes $X_j$.</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>Além disso, a estimativa de $\sigma^2$, ou seja, $\hat{\sigma^2}$, é usada para calcular o erro padrão dos coeficientes de regressão, permitindo testar a significância desses coeficientes e construir intervalos de confiança. Também é essencial na análise de resíduos, proporcionando uma avaliação robusta do modelo. Para uma melhor compreensão de tal assunto, deixa-se as referências \cite{montgomery1982introduction, kutner2004applied}.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagnóstico</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Pontos de Alavanca</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>A matriz de projeção H,</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>H = \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T,</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>é utilizada para identificar observações atípicas e influentes na amostra. É importante focar na diagonal principal dessa matriz, onde valores elevados de $h_{ii}$ indicam observações que se destacam consideravelmente das demais, em relação ao vetor médio das variáveis preditoras.</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>Para iniciar o diagnóstico, é crucial examinar os *pontos de alavancagem*, que são observações com $h_{ii}$ superior ao limiar $\frac{2p}{n}$, portanto:</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>h_{ii} \geq \frac{2p}{n},</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>onde $p$ é o número de parâmetros (coeficientes) da regressão e $n$ é o tamanho da amostra. Esse método tende a detectar muitos pontos de alavancagem, o que justifica a utilização de técnicas adicionais de diagnóstico \cite{cordeiro2004modelos, belsley1980regression}.</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Pontos de Influência</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>Define-se como *ponto de influência* a observação que, ao ser removida do conjunto de dados, causa mudanças significativas no vetor de coeficientes da regressão.</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>As medidas para verificação de pontos de influência incluem:</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>*Distância de Cook*: Avalia o quão atípica é uma observação, combinando o resíduo padronizado com os pontos de alavanca, conforme a Equação (\ref{equation:13}).</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>D_i = \dfrac{h_{ii}}{p(1 - h_{ii})} (\varepsilon_i^*)^2</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>\label{equation:13}</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>A Distância de Cook pode não ser adequada quando o resíduo padronizado é grande e $h_{ii}$ é próximo de zero. Compara-se $D_i$ com o valor crítico da distribuição $F-Snedecor$ com $p$ e $n - p$ graus de liberdade, ao nível de significância $\alpha = 50\%$, valor aproximadamente igual a 1 na prática. Assim, se $D_i \geq 1$, a *i-ésima* observação é considerada um ponto influente.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>*DFFITS*: Uma medida alternativa à Distância de Cook, obtida a partir do resíduo studentizado e da medida de alavancagem, conforme a Equação (\ref{equation:14}).</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>DFFITS_i = t_i \sqrt{ \dfrac{h_{ii}}{p(1 - h_{ii})} }</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>\label{equation:14}</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>Se $DFFITS_i \geq 2 \sqrt{ \dfrac{p}{n - p} }$, a *i-ésima* observação é considerada um ponto influente.</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Análise de Resíduos</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>A análise de resíduos é essencial para diagnosticar a adequação do modelo de regressão linear à variável resposta $Y$, assumindo que $\varepsilon_i \sim \mathcal{N}(0, \sigma^2)$.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>::: progress</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>::: {.progress-bar style="width: 100%;"}</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

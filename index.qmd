@@ -1,5 +1,28 @@
 
+```{=html}
+<style>
+  body{text-align: justify}
+</style>
+```
 
-# Prefácio {.unnumbered}
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
 
+
+# Introdução
+
+A Estatística pode ser aplicada em diversas áreas. No cenário atual onde análise de dados se tornou um ponto crucial na tomada de decisão em meio a todo tipo de negócio, a análise do comércio imobiliário não é diferente. Tendo os resultados aqui apresentados, com a finalidade de ajudar na tomada de decisão de compra, venda e investimento. A determinação precisa dos fatores que afetam os preços das propriedades pode beneficiar compradores, vendedores, corretores e investidores ao fornecer informações críticas para tomada de decisão. Este estudo foca na previsão do preço de venda de casas no Condado de King, Seattle, utilizando técnicas de regressão linear múltipla. O objetivo deste trabalho é identificar a relação entre o preço de venda de casas e suas características, na construção e diagnóstico dos modelos preditivos.
+
+A análise será realizada usando uma amostra do conjunto de dados, que abrange vendas de casas entre maio de 2014 e maio de 2015, disponibilizado pela plataforma denominada de Kaggle. Será falado mais sobre o conjunto de dados.
+
+O modelo obtido será avaliado por meio de testes de significância estatística, verificação dos pontos de influência, homocedasticidade, normalidade dos resíduos e entre outros técnicas e medidas. 
+
+Em resumo, este estudo pretende contribuir para uma compreensão mais profunda dos fatores que influenciam os preços das casas em Seattle, oferecendo uma análise rigorosa e comparativa que pode ser aplicada em contextos semelhantes no mercado imobiliário e em outros campos de pesquisa.
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
 

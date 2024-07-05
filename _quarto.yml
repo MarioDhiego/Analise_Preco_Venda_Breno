@@ -20,9 +20,6 @@ book:
       Copyright: (**SILVA, B.C.R - 2024**)
     right: |
       Construído <a href="https://quarto.org/"> Pacote Quarto no R4.3</a>.
-  cover-image: cover.png
-  favicon: cover.png
-  #site-url: https://www.fapespa.pa.gov.br/
   repo-url : https://github.com/MarioDhiego/Teoria_dos_Grafos
   repo-subdir: book
   repo-branch: main

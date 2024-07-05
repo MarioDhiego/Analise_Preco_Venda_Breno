@@ -1,12 +1,241 @@
+```{=html}
+<style>
+  body{text-align: justify}
+</style>
+```
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
 
+# Material e Métodos
 
-# Introdução
-
-
-
-# Materiais e Métodos
 ## Conjunto de Dados
-## Softaware
+
+Como já dito, o conjunto de dados utilizado neste estudo foi obtido do \href{https://www.kaggle.com}{\textbf{Kaggle}}. Este conjunto contém informações sobre vendas de casas no Condado de King, Seattle, entre maio de 2014 e maio de 2015, totalizando 21.613 observações e 21 variáveis. Porém, foi retirada uma amostra de tal conjunto. Visto que o princípio da Inferência Estatística é generalizar, concluir ou inferir os resultados de um conjunto pequeno para um conjunto maior, se tornado mais adequado para esse caso, visando um menor custo.
+
+Foi retirada uma amostra aleatória simples, que de forma simples e operante, parte de uma lista com $N$ unidades elementares, realiza-se um sorteio, com probabilidades iguais, de $n$ unidades \cite{Bussab&Bolfarine}. Utilizando uma fórmula mais simples para se calcular o tamanho da amostra, $$n = \dfrac{N \times n_0}{N + n_0},$$ onde $n_0 = \frac{1}{\varepsilon^2}$, sendo $\varepsilon$ a margem de erro amostral admitido. Fixando um $\varepsilon = 0,03$, isto é, admitindo um erro amostral de 3%, $n = 1.057$. No Quadro (\ref{quadro:01}), são apresentadas as variáveis preditoras e suas descrições.
+
+Sendo \textit{'price'} a variável resposta, as demais variáveis fornecem uma visão abrangente das características das casas e são fundamentais para o desenvolvimento e análise dos modelos preditivos.
+
+Foi realizada uma manipulação no conjunto de dados para torná-lo mais adequado à aplicação de regressão linear múltipla. Da variável preditora \textit{'date'}, foram extraídas informações adicionais e criadas quatro novas variáveis, conforme descrito no Quadro (\ref{quadro:02}).
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+## Software
+
+Para conduzir as análises e estimativas neste estudo, foi utilizada a linguagem de programação **Python**, empregando a IDE \href{https://colab.research.google.com/} *Google Colaboratory*. As seguintes bibliotecas foram utilizadas nas diversas etapas do processo:
+
+-   **NumPy**: Para operações matemáticas, lógicas e estatísticas eficientes em vetores multidimensionais ou matrizes.
+-   **Pandas**: Para manipulação e análise de dados, oferecendo estruturas de dados flexíveis e poderosas.
+-   **Matplotlib**: Para criação de visualizações gráficas.
+-   **Seaborn**: Complementar ao Matplotlib, oferece uma interface de alto nível para criação de gráficos estatísticos atrativos e informativos.
+-   **Scipy**: Para cálculos científicos e técnicos.
+-   **Statsmodels**: Para estimar e inferir modelos estatísticos
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+## Metodologia
+
+O processo de análise e modelagem dos dados para prever o preço das casas, deu-se de forma:
+
+1.  **Testes de Normalidade e Transformações**: Um dos pressupostos para aplicação de regressão linear é de que a variável resposta, $Y$, siga uma distribuição normal. Os testes de normalidade que foram aplicados nesse trabalho foram: *Shapiro-Wilk*, *Kolmogorov-Smirnov*, *D'Agostino-Pearson* e *Jarque-Bera*.
+
+Caso a variável resposta $Y$ não siga uma distribuição gaussiana, será aplicado a Transformação Box-Cox.
+
+2.  **Análise Exploratória de Dados (AED)**: Realização de análises estatísticas por meio de medidas de resumo e visualizações gráficas para entender a distribuição e variabilidade dos dados, identificar padrões e relações nos dados.
+    -   **Medidas Descritivas**: são fundamentais para uma análise exploratória de dados (AED) robusta e informativa. Elas oferecem um resumo estatístico dos dados, possibilitando uma compreensão rápida das principais características das variáveis preditoras e da variável resposta. Incluem média, desvio padrão, valores mínimos, máximos e quartis (25%, mediana e 75%).
+    -   **Análise Gráfica**: crucial na AED para visualizar intuitivamente a distribuição dos dados e as relações entre variáveis. Foram utilizados os tipos de gráficos abaixo, com objetivos específicos:
+        -   **Histogramas**: Visualizam a distribuição das variáveis numéricas, destacando a frequência dos valores e padrões como assimetrias e outliers através de curvas de densidade (KDE).
+        -   **Boxplots**: Mostram a dispersão, assimetria e outliers das variáveis, sendo úteis para comparações entre grupos.
+        -   **Diagramas de Dispersão**: Exploram relações entre variáveis numéricas, identificando padrões e correlações.
+        -   **Matriz de Correlação**: Mostra relações lineares entre todas as variáveis numéricas, ajudando na detecção de multicolinearidade e na seleção de variáveis para modelos de regressão.
+3.  **Modelagem Estatística:** Ajuste de modelos de regressão linear múltipla para prever o preço das casas.
+4.  **Diagnóstico e Análise de Resíduos:** Avaliação dos modelos por meio de análise de resíduos, medidas para pontos aberrantes e influentes como alavancagem, Distância de Cook e *DFFITS*. Verificação de pressupostos de normalidade e homocedasticidade.
+
+Para todos os Teste de Hipóteses e Intervalos de Confiança foi fixado um nível de significância de 3%, assim, $\alpha = 0,03$.
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+## Conceitos e Definições
+### Transformação Box-Cox
+
+Sugerida em 1964 por George E. P. Box e David R. Cox, que propuseram a família de transformações de potência (não-lineares) expressa pela Equação (\ref{equation:02}).
+
+$$
+\begin{equation}
+y^{(\lambda)} = \left\{ \begin{array}{l}
+\dfrac{y^\lambda - 1}{\lambda} \text{, se } \lambda \neq 0 \text{, } y > 0 \\
+\log  y \text{, se } \lambda = 0 \text{, } y > 0
+\end{array} \right.
+\label{equation:02}
+\end{equation}
+$$
+
+O valor do parâmetro $\lambda$, pode ser estimado pelo método de *Máxima Verossimilhança*. O princípio da verossimilhança afirma que devemos escolher o valor do parâmetro desconhecido, com base em uma amostra aleatória, que maximize a probabilidade desta amostra aleatória em questão ser obtida, ou seja, o valor que torna tal amostra a “mais provável” \cite{MorretinBussab}.
+    
+Assumindo que, as observações transformadas $y_i^\lambda$, $i = 1, ..., n$, satisfazem as suposições de uma distribuição gaussiana, ou seja, são *i.i.d* de forma normal com variância constante, $\sigma^2$, e esperança dada por, $E[Y_i^{(\lambda)}] = \boldsymbol{\beta}\mathbf{X_i}$. Assim, para um $\lambda$ fixo, a função \textit{log-verossimilhança} é, com exceção de constantes, dada na Equação (\ref{equation:03}).
+
+$$
+\begin{equation}
+\boldsymbol{l}(\lambda) = - \dfrac{n}{2} \log \hat{\sigma^2}(\lambda) + (\lambda - 1) \sum_{i=1}^n \log y_i 
+\label{equation:03}
+\end{equation}
+$$
+    
+Onde $\hat{\sigma^2}(\lambda)$ é obtido a partir da \textit{Análise de Variância} de $Y^{(\lambda)}$, sendo a soma de quadrados dos resíduos ($SQR$) divido pelos graus de liberdade ($gl$) do resíduo. Falaremos mais sobre isso à frente.
+    
+Em resumo, um $\lambda$ que maximize $\boldsymbol{l}(\lambda)$ é a melhor estimativa para o parâmetro da transformação. Para mais informações, se indica ver o brilhante trabalho de Box e Cox (1964) \cite{BoxCox}, e um estudo sobre as Transformações de Box-Cox, elaborado em uma Monografia do Departamento de Estatística da Universidade de Brasília \cite{alvarez2015estudo}.
 
 
-# Conceitos e Definições
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+### Modelo de Regressão Múltipla
+
+Seja $Y$ a variável dependente (resposta) que desejamos estimar usando $p - 1$ variáveis independentes (preditoras). Assim, cada observação $Y_i$ é expressa como uma combinação linear das variáveis independentes $X_{ij}$ acrescida de um termo estocástico $\varepsilon_i$, onde $j = 1, 2, \ldots, p - 1$, sendo $p$ o número total de coeficientes de regressão, e $i = 1, 2, \ldots, n$, onde $n$ é o tamanho da amostra. Veja a Equação (\ref{equation:04}).
+
+$$
+\begin{equation}
+Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \ldots + \beta_{p - 1} X_{ip - 1} + \varepsilon_i
+\label{equation:04}
+\end{equation}
+$$
+    
+A Equação (\ref{equation:04}) pode ser expressa de forma matricial, como mostrado na Equação (\ref{equation:05}).
+
+$$
+\begin{equation}
+\mathbf{Y} = \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\varepsilon}
+\label{equation:05}
+\end{equation}
+$$
+
+Onde
+
+$$
+
+\begin{eqnarray}
+\mathbf{Y_{n \times 1}} = \begin{bmatrix}
+Y_1 \\ Y_2 \\ \vdots \\ Y_n
+\end{bmatrix},
+\mathbf{X_{n \times p}} = \begin{bmatrix}
+1 & X_{11} & \cdots & X_{1 \text{ } p - 1} \\
+1 & X_{21} & \cdots & X_{2 \text{ } p - 1} \\ 
+\vdots & \vdots & \ddots & \vdots \\
+1 & X_{n1} & \cdots & X_{n \text{ } p - 1}
+\end{bmatrix},
+\boldsymbol{\beta_\mathbf{p \times 1}} = \begin{bmatrix}
+\beta_0 \\ \beta_1 \\ \vdots \\ \beta_{p - 1}
+\end{bmatrix},
+\boldsymbol{\varepsilon_\mathbf{n \times 1}} = \begin{bmatrix}
+\varepsilon_1 \\ \varepsilon_2 \\ \vdots \\ \varepsilon_n
+\end{bmatrix}.
+\end{eqnarray}
+$$
+
+$\mathbf{Y}$ é o vetor de valores da variável resposta, $\mathbf{X}$ é a matriz de variáveis preditoras, $\boldsymbol{\beta}$ vetor de coeficientes da regressão e $\boldsymbol{\varepsilon}$ é componente estocástica. A regressão pelo método de mínimos quadrados tem como principio, estimar os coeficientes do modelo minimizando a soma dos quadrados dos resíduos, desta forma $${\boldsymbol{\hat\beta}} = \mathbf{( X^T X )^{-1} X^T Y}.$$ Quando os pressupostos da regressão pelo método de mínimos quadrados são atendidos, os coeficientes estimados são não viesados e possuem variância mínima dentre a classe de estimadores não viesados para $\boldsymbol{\beta}$ \cite{alvarez2015estudo}.
+
+#### Variância em um Modelo de Regressão Múltipla
+
+Na análise de regressão múltipla, a variância dos erros ($\sigma^2$) é um parâmetro fundamental para compreender a dispersão dos valores da variável dependente $Y$ em relação ao modelo ajustado, que incorpora múltiplas variáveis independentes. A estimativa dessa variância é essencial para realizar inferências estatísticas, como a construção de intervalos de confiança e a realização de testes de hipóteses.
+
+Já foi mostrado nesse trabalho que em um modelo de regressão múltipla, cada observação $Y_i$ é expressa como uma combinação linear de variáveis independentes $X_{ij}$ somada de um termo estocástico $\varepsilon_i$, onde $j = 1, 2, \ldots, p - 1$ e $i = 1, 2, \ldots, n$, expressa pela Equação (\ref{equation:04}).
+
+Os erros ou resíduos $\varepsilon_i$ são as diferenças entre os valores observados $Y_i$ e os valores preditos $\hat{Y}_i$ pelo modelo ajustado, logo,
+
+$$
+\varepsilon_i = Y_i - \hat{Y}_i.
+$$
+
+Em regressão múltipla, o número de graus de liberdade dos resíduos é $n - p$, onde $p$ é o número de parâmetros a serem estimados e $n$ é o tamanho da amostra. Assim, a soma dos quadrados dos resíduos é dividida pelos graus de liberdade para obter o quadrado médio do erro (QME), desta forma
+
+$$
+QME = \frac{SQE}{n - p},
+$$
+
+
+sendo o QME um estimador não tendencioso para a variância dos erros, sendo está igual a variância populacional de $Y$, logo, $E[QME] = \sigma^2$. Essa estimativa é crucial para diversas análises no contexto de regressão múltipla. Um menor $\hat{\sigma^2}$ indica que os valores de $Y$ estão mais próximos dos valores preditos pelo modelo, sugerindo um melhor ajuste. Por outro lado, um maior $\hat{\sigma^2}$ indica maior dispersão dos dados em torno da superfície de regressão, sugerindo que o modelo pode não capturar adequadamente a relação entre $Y$ e as variáveis independentes $X_j$.
+
+Além disso, a estimativa de $\sigma^2$, ou seja, $\hat{\sigma^2}$, é usada para calcular o erro padrão dos coeficientes de regressão, permitindo testar a significância desses coeficientes e construir intervalos de confiança. Também é essencial na análise de resíduos, proporcionando uma avaliação robusta do modelo. Para uma melhor compreensão de tal assunto, deixa-se as referências \cite{montgomery1982introduction, kutner2004applied}.
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+### Diagnóstico
+#### Pontos de Alavanca
+
+A matriz de projeção H,
+
+$$
+H = \mathbf{X} (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T,
+$$
+
+é utilizada para identificar observações atípicas e influentes na amostra. É importante focar na diagonal principal dessa matriz, onde valores elevados de $h_{ii}$ indicam observações que se destacam consideravelmente das demais, em relação ao vetor médio das variáveis preditoras.
+
+Para iniciar o diagnóstico, é crucial examinar os *pontos de alavancagem*, que são observações com $h_{ii}$ superior ao limiar $\frac{2p}{n}$, portanto:
+
+$$
+h_{ii} \geq \frac{2p}{n},
+$$
+
+onde $p$ é o número de parâmetros (coeficientes) da regressão e $n$ é o tamanho da amostra. Esse método tende a detectar muitos pontos de alavancagem, o que justifica a utilização de técnicas adicionais de diagnóstico \cite{cordeiro2004modelos, belsley1980regression}.
+
+#### Pontos de Influência
+
+
+Define-se como *ponto de influência* a observação que, ao ser removida do conjunto de dados, causa mudanças significativas no vetor de coeficientes da regressão.
+As medidas para verificação de pontos de influência incluem:
+
+
+
+1. *Distância de Cook*: Avalia o quão atípica é uma observação, combinando o resíduo padronizado com os pontos de alavanca, conforme a Equação (\ref{equation:13}).
+
+$$
+\begin{equation}
+D_i = \dfrac{h_{ii}}{p(1 - h_{ii})} (\varepsilon_i^*)^2
+\label{equation:13}
+\end{equation}
+$$
+
+A Distância de Cook pode não ser adequada quando o resíduo padronizado é grande e $h_{ii}$ é próximo de zero. Compara-se $D_i$ com o valor crítico da distribuição $F-Snedecor$ com $p$ e $n - p$ graus de liberdade, ao nível de significância $\alpha = 50\%$, valor aproximadamente igual a 1 na prática. Assim, se $D_i \geq 1$, a *i-ésima* observação é considerada um ponto influente.
+
+2. *DFFITS*: Uma medida alternativa à Distância de Cook, obtida a partir do resíduo studentizado e da medida de alavancagem, conforme a Equação (\ref{equation:14}).
+
+
+$$
+\begin{equation}
+DFFITS_i = t_i \sqrt{ \dfrac{h_{ii}}{p(1 - h_{ii})} }
+\label{equation:14}
+\end{equation}
+$$
+
+Se $DFFITS_i \geq 2 \sqrt{ \dfrac{p}{n - p} }$, a *i-ésima* observação é considerada um ponto influente.
+
+
+
+#### Análise de Resíduos
+
+
+A análise de resíduos é essencial para diagnosticar a adequação do modelo de regressão linear à variável resposta $Y$, assumindo que $\varepsilon_i \sim \mathcal{N}(0, \sigma^2)$.
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
